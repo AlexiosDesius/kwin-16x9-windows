@@ -27,11 +27,6 @@ Window Management → KWin Scripts → **Install from File…**, tick "16:9 Wind
 with Plasma 6, though some distros ship qdbus in a separate Qt tools package. Run it inside your Plasma session.
 Plugin id: `aspect169windows`.
 
-## Unused: fit-to-content helper
-`service/fitwindow.py` is the earlier Meta+Ctrl+F "grow until the scrollbars disappear" helper. It read scrollbars
-over AT-SPI and was D-Bus activated as `org.kde.FitWindow`. It is no longer installed or called; it's kept only for
-reference.
-
 ## Building a release
     cd package && zip -r -X ../16x9-windows.kwinscript .
 Attach the file to a GitHub release.
