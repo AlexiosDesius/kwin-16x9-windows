@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Name": "16:9 Windows",
+        "Description": "Reshapes normal windows to 16:9 with the same pixel count when they open and after you move or resize them",
+        "Icon": "zoom-fit-best",
+        "Id": "aspect169windows",
+        "License": "MIT",
+        "Version": "2.0",
+        "EnabledByDefault": true,
+        "Authors": [
+            {
+                "Name": "Alice"
+            }
+        ]
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js",
+    "KPackageStructure": "KWin/Script"
+}
