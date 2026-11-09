@@ -10,18 +10,28 @@ Keeps normal windows at **16:9 while preserving their pixel count** (width × he
   then the window is moved back on screen if needed.
 - The ratio is `ASPECT_W`/`ASPECT_H` at the top of `package/contents/code/main.js`.
 
-## Install / remove
-    ./install.sh      # also re-run after editing
-    ./uninstall.sh
-Toggle it in System Settings → Window Management → KWin Scripts → "16:9 Windows". Plugin id:
-`aspect169windows`.
+## Install
+Requires Plasma 6.
+
+**From a release (recommended):** download `16x9-windows.kwinscript` from the latest release, then System Settings →
+Window Management → KWin Scripts → **Install from File…**, tick "16:9 Windows" and click Apply.
+
+**From git (for terminal users):**
+
+    git clone https://github.com/AlexiosDesius/kwin-16x9-windows.git
+    cd kwin-16x9-windows
+    ./install.sh          # installs, enables and loads it; re-run after `git pull` to update
+    ./uninstall.sh        # removes it
+
+`install.sh` needs `kpackagetool6`, `kwriteconfig6` and a qdbus tool (`qdbus6`, `qdbus-qt6` or `qdbus`). These come
+with Plasma 6, though some distros ship qdbus in a separate Qt tools package. Run it inside your Plasma session.
+Plugin id: `aspect169windows`.
 
 ## Unused: fit-to-content helper
 `service/fitwindow.py` is the earlier Meta+Ctrl+F "grow until the scrollbars disappear" helper. It read scrollbars
 over AT-SPI and was D-Bus activated as `org.kde.FitWindow`. It is no longer installed or called; it's kept only for
 reference.
 
-## Sharing
+## Building a release
     cd package && zip -r -X ../16x9-windows.kwinscript .
-Recipients install it in System Settings → Window Management → KWin Scripts → Install from File…, then tick it
-and click Apply. It needs Plasma 6.
+Attach the file to a GitHub release.
